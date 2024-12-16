@@ -22,6 +22,11 @@ func main() {
 	r := gin.Default()
 
 	// Endpoint untuk mengambil seluruh user
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, "pong")
+	})
+
+	// Endpoint untuk mengambil seluruh user
 	r.GET("/users", func(c *gin.Context) {
 		c.JSON(http.StatusOK, users)
 	})
